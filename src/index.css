@@ -109,6 +109,11 @@
   }
 }
 
+/* Mobile/touch: remove fixed noise overlay (prevents scroll jank/flicker) */
+@media (hover: none) {
+  body::after { display: none; }
+}
+
 /* ── Animations ─────────────────────────────────────────── */
 
 .text-stroke-gold {
