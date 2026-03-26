@@ -58,7 +58,7 @@ export default function Properties() {
   const displayed = filtered.slice(0, visibleCount);
 
   return (
-    <PageTransition className="pt-0 md:pt-24 min-h-screen flex flex-col">
+    <PageTransition className="pt-0 min-h-screen flex flex-col">
       {/* Header */}
       <section className="py-12 md:py-20 px-6 md:px-12 bg-[#0D0D0D] relative">
         <div className="absolute inset-0 bg-[url('/images/prop-3.jpg')] opacity-5 mix-blend-luminosity bg-cover bg-center" />
@@ -82,7 +82,7 @@ export default function Properties() {
       </section>
 
       {/* Filters */}
-      <section className="relative z-40 bg-[#0A0A0A]/95 md:backdrop-blur-md border-b border-[rgba(201,168,76,0.2)] py-4 px-6 md:px-12 md:sticky md:top-[72px]">
+      <section className="relative z-40 bg-[#0A0A0A]/95 md:backdrop-blur-md border-b border-[rgba(201,168,76,0.2)] py-4 px-6 md:px-12 md:sticky md:top-0">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-4 items-center justify-between">
           <div className="relative w-full md:w-64">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-white/40" size={18} />

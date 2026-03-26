@@ -43,7 +43,7 @@ export default function About() {
   ];
 
   return (
-    <PageTransition className="pt-0 md:pt-24 pb-20 overflow-hidden">
+    <PageTransition className="pt-0 pb-20 overflow-hidden">
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-20 flex flex-col md:flex-row items-center gap-16">
         <div className="flex-1">

@@ -31,7 +31,7 @@ export default function Contact() {
   const isOpen = isWorkingHours();
 
   return (
-    <PageTransition className="pt-0 md:pt-32 pb-20 min-h-screen">
+    <PageTransition className="pt-0 pb-20 min-h-screen">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="mb-16">
           <p className="text-primary tracking-[0.3em] text-sm uppercase mb-4">Get in Touch</p>

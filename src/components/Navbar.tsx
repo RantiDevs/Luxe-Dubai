@@ -5,50 +5,8 @@ import { Menu, X } from "lucide-react";
 import { Button, cn } from "./Button";
 
 export function Navbar() {
-  const [isDesktop, setIsDesktop] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isHidden, setIsHidden] = useState(false);
   const [location] = useLocation();
-
-  useEffect(() => {
-    const mq = window.matchMedia("(min-width: 768px)");
-    setIsDesktop(mq.matches);
-    const onChange = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
-    mq.addEventListener("change", onChange);
-    return () => mq.removeEventListener("change", onChange);
-  }, []);
-
-  useEffect(() => {
-    let lastY = window.scrollY;
-    let ticking = false;
-
-    const update = () => {
-      ticking = false;
-      const y = window.scrollY;
-
-      const nextScrolled = y > 50;
-      setIsScrolled((prev) => (prev === nextScrolled ? prev : nextScrolled));
-
-      if (!isDesktop && !isMobileMenuOpen) {
-        const nextHidden = y > lastY && y > 120;
-        setIsHidden((prev) => (prev === nextHidden ? prev : nextHidden));
-      } else {
-        setIsHidden(false);
-      }
-
-      lastY = y;
-    };
-
-    const onScroll = () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(update);
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [isDesktop, isMobileMenuOpen]);
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
@@ -65,12 +23,9 @@ export function Navbar() {
     <>
       <motion.nav
         initial={{ y: -100 }}
-        animate={{ y: isHidden ? -120 : 0 }}
+        animate={{ y: 0 }}
         transition={{ duration: 0.8, delay: 3 }} // Delays until loader finishes
-        className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-4 px-6 md:px-12",
-          isScrolled ? "bg-background/85 md:backdrop-blur-md border-b border-border" : "bg-transparent"
-        )}
+        className="relative z-50 transition-all duration-500 py-4 px-6 md:px-12 bg-background/85 border-b border-border"
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link href="/" className="text-2xl font-display tracking-[0.15em] text-primary hover-trigger relative z-[60]">
