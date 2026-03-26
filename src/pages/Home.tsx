@@ -214,7 +214,7 @@ export default function Home() {
   return (
     <PageTransition>
       <motion.div
-        className="fixed top-0 left-0 right-0 h-[2px] bg-[#C9A84C] z-[100] origin-left"
+        className="hidden md:block fixed top-0 left-0 right-0 h-[2px] bg-[#C9A84C] z-[100] origin-left"
         style={{ scaleX: scrollYProgress }}
       />
 
@@ -290,12 +290,7 @@ export default function Home() {
             ].map((pill, i) => (
               <div key={pill.label} className="flex items-center">
                 <div
-                  className="px-4 py-1.5 rounded-full text-white text-xs md:text-sm tracking-wider text-center whitespace-nowrap"
-                  style={{
-                    backdropFilter: "blur(12px)",
-                    background: "rgba(255,255,255,0.08)",
-                    border: "1px solid rgba(255,255,255,0.2)",
-                  }}
+                  className="px-4 py-1.5 rounded-full text-white text-xs md:text-sm tracking-wider text-center whitespace-nowrap bg-white/10 border border-white/20 md:backdrop-blur-md"
                 >
                   {pill.label}
                 </div>

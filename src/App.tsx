@@ -92,6 +92,16 @@ function Router() {
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 768px)");
+    setIsDesktop(mq.matches);
+    const onChange = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
@@ -100,12 +110,12 @@ function App() {
           {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
           <CustomCursor />
           <Navbar />
-          <main className="min-h-screen">
+          <main className="min-h-screen pt-20 md:pt-0">
             <Router />
           </main>
           <Footer />
-          <BackToTop />
-          <WhatsAppButton />
+          {isDesktop && <BackToTop />}
+          {isDesktop && <WhatsAppButton />}
         </WouterRouter>
         <Toaster />
       </TooltipProvider>
