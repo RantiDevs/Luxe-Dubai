@@ -25,7 +25,7 @@ export function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8, delay: 3 }} // Delays until loader finishes
-        className="relative z-50 transition-all duration-500 py-4 px-6 md:px-12 bg-background/85 border-b border-border"
+        className="sticky top-0 z-50 transition-all duration-500 py-4 px-6 md:px-12 bg-background/85 border-b border-border"
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link href="/" className="text-2xl font-display tracking-[0.15em] text-primary hover-trigger relative z-[60]">
