@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUp } from "lucide-react";
+import { Analytics } from "@vercel/analytics/react";
 
 import { CustomCursor } from "@/components/CustomCursor";
 import { LoadingScreen } from "@/components/LoadingScreen";
@@ -108,6 +109,7 @@ function App() {
           <WhatsAppButton />
         </WouterRouter>
         <Toaster />
+        <Analytics />
       </TooltipProvider>
     </QueryClientProvider>
   );
