@@ -58,7 +58,7 @@ export default function Properties() {
   const displayed = filtered.slice(0, visibleCount);
 
   return (
-    <PageTransition className="pt-24 min-h-screen flex flex-col">
+    <PageTransition className="pt-0 md:pt-24 min-h-screen flex flex-col">
       {/* Header */}
       <section className="py-12 md:py-20 px-6 md:px-12 bg-[#0D0D0D] relative">
         <div className="absolute inset-0 bg-[url('/images/prop-3.jpg')] opacity-5 mix-blend-luminosity bg-cover bg-center" />

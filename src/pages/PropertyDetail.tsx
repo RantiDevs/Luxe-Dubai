@@ -16,7 +16,7 @@ export default function PropertyDetail() {
   const allImages = [property.image, ...property.gallery];
 
   return (
-    <PageTransition className="pt-24 pb-20">
+    <PageTransition className="pt-0 md:pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Breadcrumb */}
         <div className="flex items-center gap-2 text-xs text-muted-foreground uppercase tracking-widest mb-6">

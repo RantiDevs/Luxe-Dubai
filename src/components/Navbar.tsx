@@ -35,7 +35,7 @@ export function Navbar() {
         animate={{ y: 0 }}
         transition={{ duration: 0.8, delay: 3 }} // Delays until loader finishes
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-4 px-6 md:px-12",
+          "relative z-50 transition-all duration-500 py-4 px-6 md:px-12 md:fixed md:top-0 md:left-0 md:right-0",
           isScrolled ? "bg-background/80 backdrop-blur-md border-b border-border" : "bg-transparent"
         )}
       >
