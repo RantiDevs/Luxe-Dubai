@@ -82,7 +82,7 @@ export default function Properties() {
       </section>
 
       {/* Filters */}
-      <section className="sticky top-[72px] z-40 bg-[#0A0A0A]/95 backdrop-blur-md border-b border-[rgba(201,168,76,0.2)] py-4 px-6 md:px-12">
+      <section className="relative z-40 bg-[#0A0A0A]/95 backdrop-blur-md border-b border-[rgba(201,168,76,0.2)] py-4 px-6 md:px-12 md:sticky md:top-[72px]">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-4 items-center justify-between">
           <div className="relative w-full md:w-64">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-white/40" size={18} />
