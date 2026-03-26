@@ -1,0 +1,14 @@
+packages:
+  "framer-motion": "For fluid, cinematic UI animations and page transitions"
+  "gsap": "For high-performance scroll animations and pinning (Horizontal Scroll)"
+  "@gsap/react": "React integration for GSAP to handle lifecycle and scoping"
+  "clsx": "Utility for conditionally joining classNames"
+  "tailwind-merge": "Utility to merge tailwind classes"
+
+images: []
+
+notes:
+  - Pure frontend application with no backend requirements
+  - Wouter is used for routing per system constraints
+  - GSAP is used for complex scroll-driven animations like the horizontal pinned section
+  - Framer Motion is used for micro-interactions, page transitions, and the loading screen
